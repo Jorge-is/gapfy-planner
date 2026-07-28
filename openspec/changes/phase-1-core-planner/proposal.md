@@ -9,6 +9,7 @@ estudio, con un despliegue público apto para CV. Hoy no existe código, solo el
 ## Scope
 
 ### In Scope
+
 - Scaffold Next.js 15 (App Router, TS, Tailwind, shadcn/ui) + Supabase, deploy continuo en Vercel.
 - Auth (email + Google OAuth) y RLS aplicando el DDL de `docs/DATA-MODEL.md` vía migraciones versionadas.
 - CRUD de áreas, proyectos, clases recurrentes (con excepciones) y tareas.
@@ -17,6 +18,7 @@ estudio, con un despliegue público apto para CV. Hoy no existe código, solo el
 - Vista semana con time-blocking: leer plan, marcar sesión cumplida/omitida.
 
 ### Out of Scope
+
 - Vistas día/mes, PWA/push, reportes, export `.ics` (Fase 2).
 - IA (parseo de sílabo, resumen), reprogramación automática (Fase 3).
 - Import de Google Calendar, offline con escritura, colaboración (Fase 4).
@@ -24,12 +26,14 @@ estudio, con un despliegue público apto para CV. Hoy no existe código, solo el
 ## Capabilities
 
 ### New Capabilities
+
 - `auth-and-authorization`: login (email + Google OAuth), sesión, RLS como frontera de aislamiento entre usuarios.
 - `academic-planning-data`: áreas, proyectos, clases recurrentes con excepciones, eventos manuales, tareas.
 - `deterministic-scheduler`: detección de huecos libres + asignación de sesiones por urgencia/prioridad, con reporte de conflictos.
 - `weekly-time-blocking`: vista semana, generación de plan, marcar sesión cumplida/omitida.
 
 ### Modified Capabilities
+
 - None (proyecto sin specs previas).
 
 ## Approach
@@ -42,21 +46,21 @@ duplicar capas con Route Handlers, que se reservan para la futura API de IA en F
 
 ## Affected Areas
 
-| Area | Impact | Description |
-|------|--------|--------------|
-| `supabase/migrations/` | New | DDL de `docs/DATA-MODEL.md` versionado |
-| `lib/scheduler/` | New | Algoritmo puro, sin I/O |
-| `lib/supabase/` | New | Clientes server/browser |
-| `app/(auth)/`, `app/(app)/` | New | Rutas: login, semana, clases, tareas |
-| `docs/DATA-MODEL.md` | Reference | Fuente de verdad del schema, no se modifica |
+| Area                        | Impact    | Description                                 |
+| --------------------------- | --------- | ------------------------------------------- |
+| `supabase/migrations/`      | New       | DDL de `docs/DATA-MODEL.md` versionado      |
+| `lib/scheduler/`            | New       | Algoritmo puro, sin I/O                     |
+| `lib/supabase/`             | New       | Clientes server/browser                     |
+| `app/(auth)/`, `app/(app)/` | New       | Rutas: login, semana, clases, tareas        |
+| `docs/DATA-MODEL.md`        | Reference | Fuente de verdad del schema, no se modifica |
 
 ## Risks
 
-| Risk | Likelihood | Mitigation |
-|------|------------|------------|
-| RLS mal configurada expone datos entre usuarios | Med | Test cruzado obligatorio (usuario B lee datos de A) antes de cerrar la fase |
-| Alcance sigue siendo ambicioso para 5-8 h/sem | Med | Tasks pequeñas y verificables en `sdd-tasks`; scheduler resuelto temprano |
-| Sin Supabase local, tests de RLS no son reproducibles en CI | Low | Usar Supabase CLI (`supabase start`) para tests locales |
+| Risk                                                        | Likelihood | Mitigation                                                                  |
+| ----------------------------------------------------------- | ---------- | --------------------------------------------------------------------------- |
+| RLS mal configurada expone datos entre usuarios             | Med        | Test cruzado obligatorio (usuario B lee datos de A) antes de cerrar la fase |
+| Alcance sigue siendo ambicioso para 5-8 h/sem               | Med        | Tasks pequeñas y verificables en `sdd-tasks`; scheduler resuelto temprano   |
+| Sin Supabase local, tests de RLS no son reproducibles en CI | Low        | Usar Supabase CLI (`supabase start`) para tests locales                     |
 
 ## Rollback Plan
 

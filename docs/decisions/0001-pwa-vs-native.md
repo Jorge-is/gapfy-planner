@@ -16,7 +16,7 @@ Se elige **A — PWA**.
 
 ## Consecuencias
 
-- El requisito "enlace para el CV" se cumple de forma directa: la URL de producción *es* la app.
+- El requisito "enlace para el CV" se cumple de forma directa: la URL de producción _es_ la app.
 - Un solo runtime que mantener con tiempo limitado, en vez de dos (nativo + web).
 - Se pierde algo de calidad de push notifications en iOS frente a nativo (mitigado: iOS 16.4+ soporta
   Web Push en PWA instalada; documentado como limitación conocida).

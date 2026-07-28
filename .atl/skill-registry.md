@@ -29,9 +29,9 @@ Claude API server-side · Vitest + Playwright.
 
 ## Trigger Table
 
-| Contexto de código | Regla a inyectar |
-|---|---|
-| `*.ts`, `*.tsx` | Código y comentarios en inglés; UI visible en español |
+| Contexto de código               | Regla a inyectar                                                             |
+| -------------------------------- | ---------------------------------------------------------------------------- |
+| `*.ts`, `*.tsx`                  | Código y comentarios en inglés; UI visible en español                        |
 | `*.sql`, `openspec/*` (DDL, RLS) | Seguir DDL de `docs/DATA-MODEL.md`; toda tabla de usuario lleva política RLS |
-| Cualquier commit | Conventional commits en inglés, sin coautoría de IA |
-| `docs/*.md`, ADRs | Español |
+| Cualquier commit                 | Conventional commits en inglés, sin coautoría de IA                          |
+| `docs/*.md`, ADRs                | Español                                                                      |

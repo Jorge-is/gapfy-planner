@@ -65,20 +65,20 @@ event_series + event_exceptions + manual_events + user_settings
 
 ## File Changes
 
-| File | Action | Description |
-|------|--------|-------------|
-| `supabase/migrations/0001_init.sql` | Create | DDL completo de `docs/DATA-MODEL.md` + políticas RLS |
-| `lib/scheduler/types.ts` | Create | Tipos: `TimeBlock`, `TimeSlot`, `SchedulerInput`, `SchedulerResult` |
-| `lib/scheduler/expand.ts` | Create | Expansión de `event_series` + excepciones → `TimeBlock[]` |
-| `lib/scheduler/free-slots.ts` | Create | Cálculo de huecos libres a partir de ocupación + sueño |
-| `lib/scheduler/plan.ts` | Create | `planWeek()`: scoring, asignación greedy, conflictos |
-| `lib/scheduler/*.test.ts` | Create | Vitest: casos de slack, tope diario, conflicto, reproducibilidad |
-| `lib/supabase/server.ts`, `client.ts` | Create | Clientes Supabase server/browser |
-| `lib/data/*.ts` | Create | Queries/mutations tipadas por dominio (areas, tasks, events) |
-| `app/(auth)/login/page.tsx` | Create | Login email + Google OAuth |
-| `app/(app)/week/page.tsx` | Create | Vista semana, generar plan, marcar sesión |
-| `app/(app)/classes/`, `tasks/` | Create | CRUD de clases y tareas |
-| `middleware.ts` | Create | Protección de rutas `(app)` sin sesión |
+| File                                  | Action | Description                                                         |
+| ------------------------------------- | ------ | ------------------------------------------------------------------- |
+| `supabase/migrations/0001_init.sql`   | Create | DDL completo de `docs/DATA-MODEL.md` + políticas RLS                |
+| `lib/scheduler/types.ts`              | Create | Tipos: `TimeBlock`, `TimeSlot`, `SchedulerInput`, `SchedulerResult` |
+| `lib/scheduler/expand.ts`             | Create | Expansión de `event_series` + excepciones → `TimeBlock[]`           |
+| `lib/scheduler/free-slots.ts`         | Create | Cálculo de huecos libres a partir de ocupación + sueño              |
+| `lib/scheduler/plan.ts`               | Create | `planWeek()`: scoring, asignación greedy, conflictos                |
+| `lib/scheduler/*.test.ts`             | Create | Vitest: casos de slack, tope diario, conflicto, reproducibilidad    |
+| `lib/supabase/server.ts`, `client.ts` | Create | Clientes Supabase server/browser                                    |
+| `lib/data/*.ts`                       | Create | Queries/mutations tipadas por dominio (areas, tasks, events)        |
+| `app/(auth)/login/page.tsx`           | Create | Login email + Google OAuth                                          |
+| `app/(app)/week/page.tsx`             | Create | Vista semana, generar plan, marcar sesión                           |
+| `app/(app)/classes/`, `tasks/`        | Create | CRUD de clases y tareas                                             |
+| `middleware.ts`                       | Create | Protección de rutas `(app)` sin sesión                              |
 
 ## Interfaces / Contracts
 
@@ -87,12 +87,18 @@ type SchedulerInput = {
   window: { from: string; to: string }; // ISO dates
   busy: TimeBlock[];
   tasks: Array<{
-    id: string; deadline: string; priority: "alta" | "media" | "baja";
-    remainingMinutes: number; areaId: string | null;
+    id: string;
+    deadline: string;
+    priority: "alta" | "media" | "baja";
+    remainingMinutes: number;
+    areaId: string | null;
   }>;
   settings: {
-    sleepStart: string; sleepEnd: string;
-    maxMinutesPerDay: number; minBlockMinutes: number; minBreakMinutes: number;
+    sleepStart: string;
+    sleepEnd: string;
+    maxMinutesPerDay: number;
+    minBlockMinutes: number;
+    minBreakMinutes: number;
   };
 };
 
@@ -104,11 +110,11 @@ type SchedulerResult = {
 
 ## Testing Strategy
 
-| Layer | What to Test | Approach |
-|-------|--------------|----------|
-| Unit | `lib/scheduler/*` — slack, límites duros, conflictos, reproducibilidad | Vitest, fixtures fijas, sin mocks de red |
-| Integration | RLS — aislamiento entre usuarios en todas las tablas de dominio | Supabase local (`supabase start`), dos usuarios de prueba |
-| E2E | Login → cargar clase → cargar tarea → generar plan → marcar sesión | Playwright contra entorno de preview |
+| Layer       | What to Test                                                           | Approach                                                  |
+| ----------- | ---------------------------------------------------------------------- | --------------------------------------------------------- |
+| Unit        | `lib/scheduler/*` — slack, límites duros, conflictos, reproducibilidad | Vitest, fixtures fijas, sin mocks de red                  |
+| Integration | RLS — aislamiento entre usuarios en todas las tablas de dominio        | Supabase local (`supabase start`), dos usuarios de prueba |
+| E2E         | Login → cargar clase → cargar tarea → generar plan → marcar sesión     | Playwright contra entorno de preview                      |
 
 ## Migration / Rollout
 

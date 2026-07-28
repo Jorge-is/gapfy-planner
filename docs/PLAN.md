@@ -18,15 +18,15 @@ es el plan de la aplicación completa.
 
 ## 3. Decisiones cerradas
 
-| Decisión | Elegido | Detalle |
-|---|---|---|
-| Usuarios | Multiusuario con auth | Cuentas propias, aislamiento vía RLS |
-| Google Calendar | Fuera de Fase 1 | Export `.ics` de solo lectura; import en Fase 4 |
-| Recordatorios | Web Push + in-app | PWA instalable, sin costo |
-| Offline | Solo lectura | Cache de PWA para ver el horario sin señal |
-| IA | Mínima y acotada | Parseo de texto libre + resumen semanal, nada más |
-| Ritmo de trabajo | 5-8 h/semana | Fase 1 recalibrada a 5-6 semanas |
-| Artefactos SDD | `openspec` | Versionados en el repo |
+| Decisión         | Elegido               | Detalle                                           |
+| ---------------- | --------------------- | ------------------------------------------------- |
+| Usuarios         | Multiusuario con auth | Cuentas propias, aislamiento vía RLS              |
+| Google Calendar  | Fuera de Fase 1       | Export `.ics` de solo lectura; import en Fase 4   |
+| Recordatorios    | Web Push + in-app     | PWA instalable, sin costo                         |
+| Offline          | Solo lectura          | Cache de PWA para ver el horario sin señal        |
+| IA               | Mínima y acotada      | Parseo de texto libre + resumen semanal, nada más |
+| Ritmo de trabajo | 5-8 h/semana          | Fase 1 recalibrada a 5-6 semanas                  |
+| Artefactos SDD   | `openspec`            | Versionados en el repo                            |
 
 ## 4. Alcance funcional
 

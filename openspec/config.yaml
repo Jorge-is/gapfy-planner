@@ -7,7 +7,7 @@ context: |
   Arquitectura: ver docs/ARCHITECTURE.md. Modelo de datos: ver docs/DATA-MODEL.md.
   Testing planeado: Vitest (scheduler) + Playwright (e2e). UI/docs en español, código/commits en inglés.
 
-strict_tdd: false  # sin test runner instalado todavía; se re-evalúa tras el scaffold inicial
+strict_tdd: false # sin test runner instalado todavía; se re-evalúa tras el scaffold inicial
 
 rules:
   proposal:

@@ -8,6 +8,7 @@ nada de "casi funciona".
 **Objetivo:** cargar mi ciclo académico real, generar un plan semanal y usarlo.
 
 Tareas:
+
 - Setup del proyecto (Next.js, Tailwind, shadcn/ui, Supabase, CI básico).
 - Auth (email + Google OAuth) y `user_settings` inicial.
 - CRUD de áreas y proyectos.
@@ -19,6 +20,7 @@ Tareas:
 - Deploy en Vercel con dominio público.
 
 **Criterios de aceptación:**
+
 1. Cargo mis clases reales de UTP e ICPNA del ciclo actual y aparecen correctamente en la vista semana.
 2. El planificador genera un plan semanal a partir de al menos 5 tareas con deadlines distintos, y
    respeta los límites de `user_settings`.
@@ -32,6 +34,7 @@ Tareas:
 **Objetivo:** que la app avise sola y empiece a mostrar si estoy cumpliendo.
 
 Tareas:
+
 - Vistas día y mes.
 - PWA instalable (manifest, service worker, cache de solo lectura).
 - Web Push: suscripción y envío de recordatorios antes de cada sesión planificada.
@@ -40,6 +43,7 @@ Tareas:
 - Export y borrado de datos del usuario.
 
 **Criterios de aceptación:**
+
 1. Instalo la PWA en el celular y recibo un push 15 minutos antes de una sesión, con la app cerrada.
 2. El reporte semanal muestra cifras reales calculadas de mis propias sesiones registradas.
 3. Puedo exportar un `.ics` y abrirlo en Google Calendar / Apple Calendar sin errores.
@@ -49,6 +53,7 @@ Tareas:
 **Objetivo:** que el sistema se ajuste solo cuando algo cambia, y que cargar tareas sea rápido.
 
 Tareas:
+
 - Parseo con IA de sílabo/texto libre → tareas estructuradas (server-side, validado con Zod), con
   fallback a formulario manual si la IA falla.
 - Resumen semanal en lenguaje natural sobre las métricas ya calculadas.
@@ -57,6 +62,7 @@ Tareas:
 - Manejo de conflictos: la UI muestra tareas sin espacio disponible y sugiere qué recortar.
 
 **Criterios de aceptación:**
+
 1. Pego el texto de un sílabo real y obtengo una lista de tareas con fechas correctas, editable antes
    de guardar.
 2. Omito 2 sesiones seguidas y el plan se reacomoda automáticamente sin mover ninguna sesión `locked`.

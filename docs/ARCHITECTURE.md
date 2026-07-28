@@ -2,14 +2,14 @@
 
 ## 1. Alternativas evaluadas
 
-| Criterio | A. Next.js PWA + Supabase | B. Next.js PWA + backend propio (Nest/Fastify) | C. Expo (RN + web) + Supabase |
-|---|---|---|---|
-| Esfuerzo a 5-8 h/sem | Bajo — un solo runtime, RLS ya resuelve autorización | Alto — hay que escribir y mantener API, auth, autorización a mano | Alto — dos plataformas de build, RN Web tiene fricción de estilos |
-| Costo | $0 (Vercel + Supabase free tier) | $0 (Vercel + Render/Fly free tier) + más ops | $0 web, $99-125/año si se publica en stores |
-| "Enlace para el CV" | ✅ URL directa | ✅ URL directa | ⚠️ la versión web de Expo es secundaria, no la experiencia principal |
-| Escalabilidad | Buena — Postgres real, RLS, límites conocidos del free tier | Buena, pero la escalabilidad es 100% responsabilidad propia | Buena en backend, complejidad extra en frontend |
-| Valor de portafolio | Alto — demuestra modelado de datos, RLS, algoritmo propio | Alto en backend, pero gran parte del tiempo se va en boilerplate de auth | Alto pero disperso entre dos plataformas, menos profundidad en cada una |
-| Riesgo de abandono | Bajo | Medio-alto (mucho por construir antes de tener algo usable) | Alto (dos runtimes que mantener en 5-8 h/sem) |
+| Criterio             | A. Next.js PWA + Supabase                                   | B. Next.js PWA + backend propio (Nest/Fastify)                           | C. Expo (RN + web) + Supabase                                           |
+| -------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| Esfuerzo a 5-8 h/sem | Bajo — un solo runtime, RLS ya resuelve autorización        | Alto — hay que escribir y mantener API, auth, autorización a mano        | Alto — dos plataformas de build, RN Web tiene fricción de estilos       |
+| Costo                | $0 (Vercel + Supabase free tier)                            | $0 (Vercel + Render/Fly free tier) + más ops                             | $0 web, $99-125/año si se publica en stores                             |
+| "Enlace para el CV"  | ✅ URL directa                                              | ✅ URL directa                                                           | ⚠️ la versión web de Expo es secundaria, no la experiencia principal    |
+| Escalabilidad        | Buena — Postgres real, RLS, límites conocidos del free tier | Buena, pero la escalabilidad es 100% responsabilidad propia              | Buena en backend, complejidad extra en frontend                         |
+| Valor de portafolio  | Alto — demuestra modelado de datos, RLS, algoritmo propio   | Alto en backend, pero gran parte del tiempo se va en boilerplate de auth | Alto pero disperso entre dos plataformas, menos profundidad en cada una |
+| Riesgo de abandono   | Bajo                                                        | Medio-alto (mucho por construir antes de tener algo usable)              | Alto (dos runtimes que mantener en 5-8 h/sem)                           |
 
 ## 2. Recomendación: **A — Next.js 15 (App Router) como PWA + Supabase**
 
@@ -25,7 +25,7 @@ Ver [`decisions/0002-supabase-vs-backend-propio.md`](decisions/0002-supabase-vs-
 
 ### Por qué no C (Expo / React Native)
 
-El requisito explícito es *"un enlace que pueda poner en mi CV"*. Una app nativa no es un enlace.
+El requisito explícito es _"un enlace que pueda poner en mi CV"_. Una app nativa no es un enlace.
 Expo + RN Web sí genera una versión web, pero es una plataforma secundaria dentro de un proyecto
 pensado primero para nativo — más configuración, más superficie de bugs de estilos entre entornos,
 y el único beneficio real (push notifications más pulido en iOS) no compensa duplicar el esfuerzo de
