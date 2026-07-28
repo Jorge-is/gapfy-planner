@@ -1,0 +1,51 @@
+# openspec/config.yaml
+schema: spec-driven
+
+context: |
+  Tech stack (planeado, aún no scaffoldeado): Next.js 15 App Router + TypeScript, Tailwind + shadcn/ui,
+  PWA. Backend: Supabase (Postgres + Auth + RLS). IA: Claude API server-side (funciones puntuales).
+  Arquitectura: ver docs/ARCHITECTURE.md. Modelo de datos: ver docs/DATA-MODEL.md.
+  Testing planeado: Vitest (scheduler) + Playwright (e2e). UI/docs en español, código/commits en inglés.
+
+strict_tdd: false  # sin test runner instalado todavía; se re-evalúa tras el scaffold inicial
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+    - Identify affected modules/packages
+  specs:
+    - Use Given/When/Then format for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Include sequence diagrams for complex flows
+    - Document architecture decisions with rationale
+  tasks:
+    - Group tasks by phase (infrastructure, implementation, testing)
+    - Use hierarchical numbering (1.1, 1.2, etc.)
+    - Keep tasks small enough to complete in one session
+  apply:
+    - Follow existing code patterns and conventions
+    - Load relevant coding skills for the project stack
+  verify:
+    - Run tests if test infrastructure exists
+    - Compare implementation against every spec scenario
+  archive:
+    - Warn before merging destructive deltas (large removals)
+
+testing:
+  strict_tdd: false
+  detected: "2026-07-27"
+  test_runner:
+    command: null
+    framework: null
+  layers:
+    unit: { available: false, tool: null }
+    integration: { available: false, tool: null }
+    e2e: { available: false, tool: null }
+  coverage:
+    available: false
+    command: null
+  quality_tools:
+    linter: { available: false, command: null }
+    type_checker: { available: false, command: null }
+    formatter: { available: false, command: null }
