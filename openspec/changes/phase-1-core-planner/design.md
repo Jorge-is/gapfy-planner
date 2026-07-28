@@ -1,4 +1,4 @@
-# Design: Fase 1 — Núcleo desplegable de PlanIA
+# Design: Fase 1 — Núcleo desplegable de Gapfy
 
 ## Technical Approach
 

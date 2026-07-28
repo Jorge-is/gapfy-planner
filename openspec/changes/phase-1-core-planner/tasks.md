@@ -1,4 +1,4 @@
-# Tasks: Fase 1 — Núcleo desplegable de PlanIA
+# Tasks: Fase 1 — Núcleo desplegable de Gapfy
 
 ## Phase 1: Foundation
 

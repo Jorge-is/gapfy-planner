@@ -1,9 +1,9 @@
-# PlanIA — Plan técnico
+# Gapfy — Plan técnico
 
 ## 1. Contexto y objetivo
 
 Jorge cursa Ingeniería de Software en la UTP (Lima, Perú), lleva un curso de inglés en el ICPNA, trabaja
-y desarrolla proyectos académicos y personales. PlanIA tiene doble objetivo: resolver su organización
+y desarrolla proyectos académicos y personales. Gapfy tiene doble objetivo: resolver su organización
 real del tiempo y servir como pieza de portafolio técnico.
 
 Ya existe un prototipo validado con planificación y detección automática de huecos libres. Este documento

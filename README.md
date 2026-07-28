@@ -1,4 +1,4 @@
-# PlanIA
+# Gapfy
 
 Aplicación de planificación académica y de tiempo. Detecta bloques libres en tu semana y asigna
 sesiones de estudio y trabajo profundo priorizando por urgencia e importancia.

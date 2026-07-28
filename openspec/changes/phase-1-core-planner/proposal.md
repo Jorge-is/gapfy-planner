@@ -1,4 +1,4 @@
-# Proposal: Fase 1 — Núcleo desplegable de PlanIA
+# Proposal: Fase 1 — Núcleo desplegable de Gapfy
 
 ## Intent
 

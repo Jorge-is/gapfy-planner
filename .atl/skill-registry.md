@@ -1,4 +1,4 @@
-# Skill Registry — PlanIA
+# Skill Registry — Gapfy
 
 Generado por `sdd-init`. Escanea skills de usuario y convenciones del proyecto para inyectar reglas
 compactas en cada sub-agente delegado.

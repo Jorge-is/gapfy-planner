@@ -2,7 +2,7 @@
 
 ## Contexto
 
-El nombre del proyecto es "PlanIA" y existe la tentación de usar IA en todos lados (planificación,
+El nombre del proyecto es "Gapfy" y existe la tentación de usar IA en todos lados (planificación,
 priorización, chat). Hay que decidir dónde la IA realmente aporta frente a lógica determinista.
 
 ## Opciones consideradas
@@ -30,5 +30,5 @@ Se elige **A — IA mínima y acotada**.
 - Degradación explícita: si la IA falla o no está disponible, el parseo cae a un formulario manual y
   el resumen a una plantilla determinista con los mismos números. La app nunca depende de la IA para
   funcionar.
-- El nombre "PlanIA" se mantiene honesto: la IA está presente y es útil, pero no es el corazón del
+- El nombre "Gapfy" se mantiene honesto: la IA está presente y es útil, pero no es el corazón del
   producto — el corazón es el algoritmo de planificación.
