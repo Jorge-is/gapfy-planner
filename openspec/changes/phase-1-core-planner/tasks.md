@@ -4,7 +4,7 @@
 
 - [x] 1.1 Scaffold Next.js (App Router, TS, Tailwind, shadcn/ui) con `pnpm`. Desviación: se instaló Next.js 16.2 (última estable disponible), no 15 — sin impacto en el diseño, que depende del patrón App Router, no de una versión específica.
 - [x] 1.2 Configurar ESLint + Prettier + `tsc --noEmit` en CI (GitHub Actions).
-- [ ] 1.3 Crear proyecto Supabase, instalar CLI, `supabase init`.
+- [x] 1.3 Crear proyecto Supabase, instalar CLI, `supabase init`. Credenciales en `.env.local` (gitignored); `.env.example` versionado como referencia.
 - [ ] 1.4 Escribir `supabase/migrations/0001_init.sql` con el DDL completo de `docs/DATA-MODEL.md` (tablas + índices + RLS).
 - [ ] 1.5 Deploy inicial vacío en Vercel, conectar repo, confirmar URL pública.
 - [ ] 1.6 `lib/scheduler/types.ts` — tipos `TimeBlock`, `TimeSlot`, `SchedulerInput`, `SchedulerResult`.
